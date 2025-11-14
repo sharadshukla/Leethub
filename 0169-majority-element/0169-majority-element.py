@@ -1,6 +1,6 @@
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        num = -1
+        num = None
         for i in nums:
             if i != num:
                 count = nums.count(i)
@@ -8,6 +8,8 @@ class Solution:
                     return i
                 else:
                     num = i
+
+
 
 
         
