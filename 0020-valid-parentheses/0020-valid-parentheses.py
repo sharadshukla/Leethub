@@ -7,18 +7,18 @@ class Solution:
                 continue
             if not stack:
                 return False
-            if stack:
-                if i == ')' and stack[-1] == '(':
-                    stack.pop()
-                    continue
-                elif i == ']' and stack[-1] == '[':
-                    stack.pop()
-                    continue
-                elif i == '}' and stack[-1] == '{':
-                    stack.pop()
-                    continue
-                else:
-                    return False
+            
+            if i == ')' and stack[-1] == '(':
+                stack.pop()
+                continue
+            elif i == ']' and stack[-1] == '[':
+                stack.pop()
+                continue
+            elif i == '}' and stack[-1] == '{':
+                stack.pop()
+                continue
+            else:
+                return False
         
         return not stack
             
