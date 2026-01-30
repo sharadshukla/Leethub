@@ -5,23 +5,22 @@ class Solution:
             if i in "([{":
                 stack.append(i)
                 continue
-            if s[0] in ")]}":
+            if not stack:
                 return False
             if stack:
-                if i is ')' and stack[-1] is '(':
+                if i == ')' and stack[-1] == '(':
                     stack.pop()
                     continue
-                elif i is ']' and stack[-1] is '[':
+                elif i == ']' and stack[-1] == '[':
                     stack.pop()
                     continue
-                elif i is '}' and stack[-1] is '{':
+                elif i == '}' and stack[-1] == '{':
                     stack.pop()
                     continue
+                else:
+                    return False
         
-        if not stack:
-            return True
-        else:
-            return False
+        return not stack
             
             
 
