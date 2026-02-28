@@ -14,6 +14,7 @@ class Solution:
                 return -1
             if self.min1 < node.val < self.min2:
                 self.min2 = node.val
+                return self.min2
             elif self.min1 == node.val:
                 dfs(node.left)
                 dfs(node.right)
